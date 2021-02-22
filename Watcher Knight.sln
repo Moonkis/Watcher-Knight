@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watcher Knight", "Watcher Knight\Watcher Knight.csproj", "{6E7A91AE-13CC-4492-9EB0-78BAA45E4FB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E7A91AE-13CC-4492-9EB0-78BAA45E4FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7A91AE-13CC-4492-9EB0-78BAA45E4FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7A91AE-13CC-4492-9EB0-78BAA45E4FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7A91AE-13CC-4492-9EB0-78BAA45E4FB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE61D75B-18BD-4B00-B3A1-5A24179C1D48}
+	EndGlobalSection
+EndGlobal
