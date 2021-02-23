@@ -61,7 +61,7 @@ namespace Watcher_Knight
             "Soul_Totem", // Ignore soul refills
         };
 
-        private static string[] Shopkeepers = new[] { "Iselda", "Sly", "Salubra" };
+        private static string[] Shopkeepers = new[] { "Iselda", "Sly", "Sly_(Key)","Salubra", "Leg_Eater" };
 
         private static string TrackerFileName = "RandomizerTrackerLog.txt";
         private static string HollowKnightDirectory = @"\AppData\LocalLow\Team Cherry\Hollow Knight\";
@@ -242,7 +242,7 @@ namespace Watcher_Knight
 
             foreach(var vendor in Shopkeepers)
             {
-                if (vendor.Contains(location)) return true;
+                if (vendor == location) return true;
             }
 
             return false;
