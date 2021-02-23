@@ -208,7 +208,7 @@ namespace Watcher_Knight
                 if (!ObtainedItems.Contains(item))
                 {
                     if (showObtainedItems)
-                        Print($"Obtained: {item}", ConsoleColor.Yellow);
+                        Print($"Obtained: {item} at {location}", ConsoleColor.Yellow);
                     ObtainedItems.Add(item);
 
                     if (takeScreenshot && !IsIgnoredItem(item) && !IsIgnoredLocation(location))
