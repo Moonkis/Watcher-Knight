@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Configuration;
+using System.Linq;
 using static System.Environment;
 
 namespace Watcher_Knight
@@ -63,8 +64,8 @@ namespace Watcher_Knight
 
         private static string[] Shopkeepers = new[] { "Iselda", "Sly", "Sly_(Key)","Salubra", "Leg_Eater" };
 
-        private static string TrackerFileName = "RandomizerTrackerLog.txt";
-        private static string HollowKnightDirectory = @"\AppData\LocalLow\Team Cherry\Hollow Knight\";
+        private static string TrackerFileName = "TrackerLog.txt";
+        private static string HollowKnightDirectory = @"\AppData\LocalLow\Team Cherry\Hollow Knight\Randomizer 4\Recent\";
         private static string FullPath;
 
         private static string pattern = @"{(.*?)}";
@@ -197,13 +198,17 @@ namespace Watcher_Knight
 
             foreach (var line in lines)
             {
-                if (!line.StartsWith("ITEM --- ")) continue;
+                if (!line.StartsWith("ITEM")) continue;
 
-                Match m = Regex.Match(line, pattern);
+                MatchCollection matchCollection = Regex.Matches(line, pattern);
+                Match[] matches = new Match[matchCollection.Count];
+                matchCollection.CopyTo(matches, 0);
 
-                if (m == null || !m.Success || m.Groups.Count < 2) continue;
-                string item = m.Groups[1].Value;
-                string location = m.Groups[2].Value;
+                
+                if (!matches.All(x => x?.Success ?? false)) continue;
+
+                string item = matches[0].Groups[1].Value;
+                string location = matches[1].Groups[1].Value;
 
                 if (!ObtainedItems.Contains(item))
                 {
