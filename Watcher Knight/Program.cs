@@ -209,12 +209,13 @@ namespace Watcher_Knight
 
                 string item = matches[0].Groups[1].Value;
                 string location = matches[1].Groups[1].Value;
+                string id = matches[2].Groups[1].Value;
 
-                if (!ObtainedItems.Contains(item))
+                if (!ObtainedItems.Contains(id))
                 {
                     if (showObtainedItems)
-                        Print($"Obtained: {item} at {location}", ConsoleColor.Yellow);
-                    ObtainedItems.Add(item);
+                        Print($"Obtained: {item} at {location} with id: {id}", ConsoleColor.Yellow);
+                    ObtainedItems.Add(id);
 
                     if (takeScreenshot && !IsIgnoredItem(item) && !IsIgnoredLocation(location))
                     {
